@@ -1,0 +1,289 @@
+:root {
+    --primary-color: rgb(95, 158, 160);
+    --secondary-color: darkslategray;
+    --background-color: white;
+    --text-color: rgb(70, 70, 70);
+    --font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    padding: 2.5rem;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 98;
+}
+
+header h1{
+    font-size: 2.5rem;
+    color:var(--background-color);
+    margin-left: -120rem;
+}
+
+.img-logo {
+    width: 4rem;
+    height: auto;
+}
+
+.btnLogout {
+    width: 7rem;
+    height: auto;
+    outline: none;
+    border: 2px white solid;
+    background-color: transparent;
+    color: white;
+    font-size: 1.75em;
+    border-radius: 4px;
+    transition: 0.4s;
+    margin-left: 1.4rem;
+}
+
+.btnLogout:hover {
+    color: var(--primary-color);
+    background: white;
+}
+
+.content1 {
+    max-width: 75%;
+    margin: 10rem auto 0 auto; /* Center and add margin from top */
+    padding: 2rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content1 h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.content1 p {
+    font-size: 1.6rem; /* Paragraph font size */
+    margin-bottom: 2rem; /* Margin below paragraph */
+    color: var(--text-color);
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#makeAppointmentBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color); /* Adjust to your website's primary color */
+    color: white; /* Button text color */
+    font-size: 1.4rem; /* Adjust as needed */
+    padding: 1rem 2rem; /* Adjust padding as needed */
+    border: none;
+    border-radius: 2rem; /* Adjust border radius for rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold; /* Bold text */
+}
+
+#makeAppointmentBtn:hover {
+    background-color: var(--secondary-color); /* Adjust to your website's secondary color */
+}
+
+#makeAppointmentBtn::before {
+    content: '\f067'; /* FontAwesome Unicode for the plus icon */
+    font-family: 'FontAwesome';
+    margin-right: 1rem; /* Space between the icon and text */
+    font-size: 1.4rem; /* Adjust icon size */
+}
+
+#makeAppointmentBtn span {
+    font-size: 1.4rem; /* Adjust text size */
+}
+
+.appointment-container {
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.appointment-container .btn {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.appointment-container .btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.appointmentPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Increased width for better visibility */
+    max-width: 40rem; /* Ensure it doesn't exceed this width */
+    background: var(--background-color);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    z-index: 100;
+    padding: 2rem;
+    overflow-y: auto; /* Add scroll for overflow */
+    max-height: 90vh; /* Ensure it fits within the viewport */
+}
+
+.appointment-content {
+    position: relative;
+}
+
+.appointment-content .close-popup {
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: var(--secondary-color);
+    font-size: 2.8rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.appointmentPopup .input-box {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.appointmentPopup .input-box label {
+    display: block;
+    margin-bottom: 0.5rem; /* Reduced margin for better alignment */
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.appointmentPopup .input-box select,
+.appointmentPopup .input-box input {
+    width: 100%;
+    padding: 1rem;
+    border: 0.1rem solid var(--secondary-color);
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.appointmentPopup .btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.appointmentsContainer {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.appointmentsContainer h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.appointment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.appointment h3 {
+    font-size: 1.8rem;
+}
+
+.appointment p {
+    font-size: 1.4rem;
+}
+
+.appointment .delete-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.appointment .delete-btn:hover {
+    background: var(--primary-color);
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 5.5rem;
+    }
+
+    .appointmentPopup {
+        width: 80%;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 5rem;
+    }
+
+    .appointmentPopup {
+        width: 90%;
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}

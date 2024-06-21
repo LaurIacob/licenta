@@ -1,0 +1,719 @@
+:root {
+    --primary-color: rgb(95, 158, 160);
+    --secondary-color: darkslategray;
+    --background-color: white;
+    --text-color: rgb(70, 70, 70);
+    --font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    padding: 2.5rem;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 98;
+}
+
+header h1{
+    font-size: 2.5rem;
+    color:var(--background-color);
+    margin-left: -80rem;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    z-index: 99;
+}
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.img-logo {
+    width: 4rem;
+    height: auto;
+}
+
+.img-doctor {
+    position: absolute;
+    height: 50rem;
+    width: auto;
+    top: 20%; /* Adjust this value to move the element down */
+    left: 14%; /* Adjust this value to move the element to the left */
+}
+
+.img-doctorf {
+    position: absolute;
+    height: 35rem;
+    width: auto;
+    top: 22%; /* Adjust this value to move the element down */
+    left: 80%; /* Adjust this value to move the element to the left */
+}
+
+.img-hospital{
+    position: absolute;
+    height: 40rem;
+    width: auto;
+    top: 20%; /* Adjust this value to move the element down */
+    left: 30%;
+}
+
+.home {
+    padding-top: 10rem; /* Adjust this value to move the content down */
+}
+
+.content {
+    max-width:75%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 211.5rem;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    padding-left: 25rem;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    padding-left: 25rem;
+}
+
+.content p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    padding-left: 20rem;
+}
+
+.content ul {
+    list-style: none;
+    margin-bottom: 2rem;
+    padding-left: 20rem;
+    max-width: 52%;
+}
+
+.content ul li {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.content ul li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: -0.4rem;
+    font-size: 2rem;
+}
+
+.content strong {
+    color: var(--secondary-color);
+}
+
+
+.carousel {
+    position: absolute;
+    top: 38%;
+    left: 52.5%;
+    width: 50rem;
+    height: 30rem;
+    max-width: 90%;
+    max-height: 90%;
+    background: var(--background-color);
+    border: 0.2rem solid var(--primary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+}
+
+.carousel-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-text {
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    width: 40%;
+    margin-right: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.carousel-text h1 {
+    font-size: 2.1rem; /* Adjust size as needed */
+    margin-bottom: 1rem;
+}
+
+.carousel-text p {
+    font-size: 1.3rem; /* Adjust size as needed */
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.carousel-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the image covers the entire container */
+    border-radius: 0; /* Remove border-radius if applied */
+}
+.carousel-btn {
+    background: var(--secondary-color); /* Ensure the background is visible */
+    border: 2px solid var(--secondary-color); /* Add a border to the button */
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--background-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 97; /* Ensure buttons are above other elements */
+    width: 3rem; /* Set a fixed width for the button */
+    height: 3rem; /* Set a fixed height for the button */
+    border-radius: 50%; /* Make the button circular */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the arrow inside the button */
+    transition: background 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.carousel-btn:hover {
+    color: var(--secondary-color);
+    background: var(--background-color); /* Change background color on hover */
+    border-color: var(--secondary-color); /* Change border color on hover */
+}
+
+.carousel-btn.prev {
+    left: 1rem;
+}
+
+.carousel-btn.next {
+    right: 1rem;
+}
+
+.carousel-btn:hover {
+    color: var(--primary-color);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+}
+
+.dot {
+    height: 1rem;
+    width: 1rem;
+    margin: 0 0.5rem;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    border: 1.7px solid var(--secondary-color); /* Add this line to create a white border */
+}
+
+.dot.active {
+    background-color: var(--secondary-color);
+}
+
+
+.navigation {
+    margin-right: 30px;
+}
+
+.navigation a {
+    font-size: 1.75em;
+    font-weight: 500;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    margin-left: 1.4rem;
+}
+
+.btnLogin-popup {
+    width: 7rem;
+    height: auto;
+    outline: none;
+    border: 2px white solid;
+    background-color: transparent;
+    color: white;
+    font-size: 1.75em;
+    border-radius: 4px;
+    transition: 0.4s;
+    margin-left: 1.4rem;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 0.3rem;
+    background: white;
+    border-radius: 4px;
+    transform: scaleX(0);
+    transition: transform .3s;
+    transform-origin: right;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.btnLogin-popup:hover {
+    color: var(--primary-color);
+    background: white;
+}
+
+.wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 35rem;
+    height: 40rem;
+    background: var(--background-color);
+    border: 0.2rem solid var(--primary-color);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform .5s ease, height .2s ease;
+    z-index: 100;
+    visibility: hidden;
+}
+
+.wrapper.active-popup {
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: var(--secondary-color);
+    font-size: 2.8rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 4rem;
+}
+
+.form-box h2 {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    border-bottom: 0.2rem solid var(--secondary-color);
+    margin: 3rem 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 70%;
+    left: 0.5rem;
+    transform: translateY(-70%);
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -0.4rem;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 0 0.35rem 0 0.5rem;
+}
+
+.remember-forgot {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin: -1.5rem 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: var(--secondary-color);
+    margin-right: 0.3rem;
+}
+
+.remember-forgot a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin-top: 0.2rem;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 4.5rem;
+    background: var(--secondary-color);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 500;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 0%;
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    line-height: 57px;
+}
+
+.login-register {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    text-align: center;
+    font-weight: 500;
+    margin: 2.5rem 0 1rem;
+}
+
+.login-register p a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+
+.about {
+    padding-top: 3rem;
+    padding-left: 30rem;
+    text-align: center;
+    margin-top: 5rem;
+    position: absolute;
+    top:90%;
+    max-width: 80%;
+}
+
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.about p {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40rem;
+}
+
+.stat {
+    background: var(--background-color);
+    border: 0.2rem solid var(--primary-color);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 15rem;
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat p {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+}
+
+.contact {
+    top: 270%;
+    margin-top: 7rem;
+    text-align: center;
+    position:absolute;
+    left: 19%;
+    padding-bottom: 2rem;
+}
+
+.contact h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color); /* Adjust the color if needed */
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* To ensure responsiveness */
+}
+
+.contact-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30rem; /* Adjust width as needed */
+    text-align: center;
+}
+
+.contact-icon {
+    font-size: 3rem;
+    color: #008080; /* Adjust the color if needed */
+    margin-bottom: 1rem;
+}
+
+.contact-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333; /* Adjust the color if needed */
+}
+
+.contact-box p {
+    font-size: 1.4rem;
+    color: #666; /* Adjust the color if needed */
+    word-wrap: break-word; /* Ensure text wraps if too long */
+}
+
+.specialties-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 75%; /* Ensure responsiveness */
+}
+
+
+.specialties {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top:190%;
+    padding-top: 3rem;
+}
+
+.specialties h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color); /* Adjust the color if needed */
+}
+
+.specialties p{
+    font-size: 1.5rem;
+    color: black;
+    max-width: 80%;
+}
+
+.specialty-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30rem; /* Adjust width as needed */
+    text-align: center; /* Center-align the text in the box */
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.specialty-icon {
+    font-size: 3rem;
+    color: #008080; /* Adjust the color if needed */
+    margin-bottom: 1rem;
+}
+
+.specialty-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333; /* Adjust the color if needed */
+}
+
+.specialty-box p {
+    font-size: 1.4rem;
+    color: #666; /* Adjust the color if needed */
+    word-wrap: break-word;
+    text-align: center; /* Ensure text wraps if too long */
+}
+
+.learn-more-btn {
+    background: #008080; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background: #006666; /* Button background color on hover */
+}
+
+.learn-more-btn ion-icon {
+    margin-left: 0.5rem; /* Space between text and icon */
+}
+
+
+.social-media {
+    margin-top: 1rem;
+}
+
+.social-media a {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}

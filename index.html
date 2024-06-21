@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PulsePoint - Keeping you healthy, happy, and smiling with top-notch care.">
+  <meta name="keywords" content="health, clinic, PulsePoint, healthcare, medical">
+  <script src="script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="icon" href="logo2.png" sizes="128x128" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <title>PulsePoint</title>
+</head>
+<body>
+    <header>
+        <img class="img-logo" src="logo.png" alt="PulsePoint Logo">
+        <h1>PulsePoint</h1>
+        <nav class="navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About us</a>
+            <a href="#specialties">Specialties</a>
+            <a href="#contact">Contact</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <div class="overlay"></div>
+
+    <main>
+        <section class="home" id="home">
+            <img class="img-doctor" src="doctor2_male.png" alt="Doctor Image">
+            <div class="content">
+                <h1>Welcome to PulsePoint</h1>
+                <p>
+                    Hey there! Welcome to PulsePoint, where we're all about keeping you healthy, happy, and smiling! With top-notch care, friendly faces, and a whole lot of heart, we're here to make your health journey a breeze. Our mission is to provide exceptional healthcare services that cater to your individual needs. We believe that a healthy life is a happy life, and we're dedicated to making sure you receive the best care possible.
+                </p>
+                <h2>Why Choose PulsePoint?</h2>
+                <ul>
+                    <li><strong>Comprehensive Services:</strong> We offer a full range of healthcare services to meet all your medical needs.</li>
+                    <li><strong>Experienced Professionals:</strong> Our team consists of highly trained and experienced doctors, nurses, and support staff.</li>
+                    <li><strong>Patient-Centered Care:</strong> Your health and satisfaction are our top priorities.</li>
+                    <li><strong>State-of-the-Art Facilities:</strong> Our clinics are equipped with the latest medical technology to provide you with the best care possible.</li>
+                </ul>
+                <p>
+                    Join the PulsePoint family and experience healthcare that truly cares about you. Together, we can make a positive impact on your health and well-being. Let's embark on this journey to better health, together!
+                 </p>
+            </div>
+            <div class="carousel">
+                <button class="carousel-btn prev">❮</button>
+                <div class="carousel-item">
+                    <div class="carousel-text">
+                        <h1>Meet Our Doctors</h1>
+                        <p>Our team of highly qualified and friendly doctors is here to provide the best care.</p>
+                    </div>
+                    <div class="carousel-image">
+                        <img src="carouselImage1.png" alt="Doctors Image">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-text">
+                        <h1>Medical Specialties</h1>
+                        <p>Explore the wide range of medical specialties we offer to cater to your needs.</p>
+                    </div>
+                    <div class="carousel-image">
+                        <img src="carouselImage2.png" alt="Medical Specialties Image">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-text">
+                        <h1>Patient Testimonials</h1>
+                        <p>Hear what our patients have to say about the exceptional care they received.</p>
+                    </div>
+                    <div class="carousel-image">
+                        <img src="carouselImage3.png" alt="Testemonials Image">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-text">
+                        <h1>Our Services</h1>
+                         <p>Discover the comprehensive services we provide to ensure your well-being.</p>
+                    </div>
+                    <div class="carousel-image">
+                        <img src="carouselImage4.png" alt="Services Image">
+                    </div>
+                </div>
+                <button class="carousel-btn next">❯</button>
+                <div class="carousel-dots">
+                    <span class="dot" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="about" id="about">
+            <h2>About Us</h2>
+            <p>PulsePoint is dedicated to providing top-notch healthcare services to keep you healthy, happy, and smiling. Our team of experienced doctors and friendly staff are here to ensure your health journey is a breeze.</p>
+            <img class="img-doctorf" src="doctor2_female.png" alt="Doctor Image">
+            <img class="img-hospital" src="hospital.png" alt="Hospital Image">
+            <div class="stats">
+                <div class="stat">
+                    <h3 id="clinicsCount">0</h3>
+                    <p>Available Clinics</p>
+                </div> 
+                
+                <div class="stat">
+                    <h3 id="doctorsCount">0</h3>
+                    <p>Doctors at Work</p>
+                </div>
+                <div class="stat">
+                    <h3 id="bedsCount">0</h3>
+                    <p>Bed Facilities</p>
+                </div>
+                <div class="stat">
+                    <h3 id="patientsCount">0</h3>
+                    <p>Happy Patients</p>
+                </div>
+            </div>
+        </section>
+        <section class="specialties" id="specialties">
+            <h2>Medical Specialties</h2>
+            <div class="specialties-container">
+                <div class="specialty-box">
+                    <div class="specialty-icon">
+                        <ion-icon name="heart-outline"></ion-icon>
+                    </div>
+                    <h3>Cardiology</h3>
+                    <p>Comprehensive heart care for all ages.</p>
+                    <button class="learn-more-btn">Learn More <ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </div>
+                <div class="specialty-box">
+                    <div class="specialty-icon">
+                        <ion-icon name="body-outline"></ion-icon>
+                    </div>
+                    <h3>Pediatrics</h3>
+                    <p>Dedicated healthcare for infants, children, and adolescents.</p>
+                    <button class="learn-more-btn">Learn More <ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </div>
+                <div class="specialty-box">
+                    <div class="specialty-icon">
+                        <ion-icon name="pulse-outline"></ion-icon>
+                    </div>
+                    <h3>Neurology</h3>
+                    <p>Advanced care for neurological disorders.</p>
+                    <button class="learn-more-btn">Learn More <ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </div>
+                <div class="specialty-box">
+                    <div class="specialty-icon">
+                        <ion-icon name="walk-outline"></ion-icon>
+                    </div>
+                    <h3>Orthopedics</h3>
+                    <p>Expert care for musculoskeletal conditions.</p>
+                    <button class="learn-more-btn">Learn More <ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </div>
+                <div class="specialty-box">
+                    <div class="specialty-icon">
+                        <ion-icon name="nuclear-outline"></ion-icon>
+                    </div>
+                    <h3>Gastroenterology</h3>
+                    <p>Specialized care for digestive system disorders.</p>
+                    <button class="learn-more-btn">Learn More <ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </div>
+                <div class="specialty-box">
+                    <div class="specialty-icon">
+                        <ion-icon name="basketball-outline"></ion-icon>
+                    </div>
+                    <h3>Physiotherapy</h3>
+                    <p>Personalized treatment plans to restore movement and function.</p>
+                    <button class="learn-more-btn">Learn More <ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </div>
+                <p>Discover the wide range of medical specialties we offer to provide comprehensive care tailored to your needs. Our expert team is dedicated to ensuring you receive the best possible treatment. Learn more about our specialties and how we can help you maintain your health and well-being.</p>
+            </div>
+        </section>        
+        <section class="contact" id="contact">
+            <h2>Contact</h2>
+            <div class="contact-container">
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <ion-icon name="location-outline"></ion-icon>
+                    </div>
+                    <h3>Adress</h3>
+                    <p>Bulevardul Ion C. Brătianu 44, Parter, București 030177</p>
+                </div>
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <ion-icon name="call-outline"></ion-icon>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+4071 234 567</p>
+                </div>
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </div>
+                    <h3>Email</h3>
+                    <p>office@pulsepoint.ro</p>
+                </div>
+            </div>
+        </section>        
+        <div class="wrapper">
+            <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form id = "loginForm">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" name = "email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" name = "password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">Remember me</label>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="login-register">
+                        <p>Don't have an account?
+                            <a href="#" class="register-link">Register</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <div class="form-box register">
+                <h2>Register</h2>
+                <form id = "registerForm">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" name="name" required>
+                        <label>Name</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" name="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox" required>Agree to the terms & conditions</label>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                    <div class="login-register">
+                        <p>Already have an account?
+                            <a href="#" class="login-link">Login</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
