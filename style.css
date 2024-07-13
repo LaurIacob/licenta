@@ -103,7 +103,7 @@ header h1{
     color: var(--text-color);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 211.5rem;
+    height: 283.5rem;
 }
 
 .content h1 {
@@ -567,7 +567,7 @@ header h1{
 }
 
 .contact {
-    top: 270%;
+    top: 370%;
     margin-top: 7rem;
     text-align: center;
     position:absolute;
@@ -702,6 +702,156 @@ header h1{
     margin-left: 0.5rem; /* Space between text and icon */
 }
 
+/* The Modal (background) */
+/* General modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation: fadeIn 0.3s; /* Fade in animation */
+}
+
+.modal-content {
+    position: relative;
+    top: 20%;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px; /* Max width of the modal */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: slideIn 0.3s; /* Slide in animation */
+    display: flex; /* Flexbox for layout */
+    flex-direction: row; /* Horizontal layout */
+}
+
+.modal-left {
+    flex: 1; /* Take up remaining space */
+    padding: 20px;
+}
+
+.modal-left h2{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.modal-left p{
+    font-size: 1.5rem;
+    color: black;
+    max-width: 80%;
+}
+
+.modal-right {
+    flex: 1; /* Take up equal space as left */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-right img {
+    max-width: 100%; /* Ensure image does not overflow */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    position: relative; /* Position the close button absolutely */
+    left:97%; /* Position 20px from the right */
+    top: 10%; 
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-50px);}
+    to {transform: translateY(0);}
+}
+
+.medicines {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top:278%;
+    padding-top: 3rem;
+}
+
+.medicines h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color); /* Adjust the color if needed */
+}
+
+.medicines p{
+    font-size: 1.5rem;
+    color: black;
+    padding-top: 4rem;
+    max-width: 70%;
+}
+
+.medicines-container {
+    max-height: 400px; /* Adjust this height as needed */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+    width: 74%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#medicines-table {
+    border-collapse: collapse;
+}
+
+#medicines-table th, #medicines-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    
+}
+
+#medicines-table th {
+    background-color: var(--primary-color);
+    color: white;
+    position: sticky;
+    top: -1rem;
+    z-index: 1;
+}
+
+#medicines-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#medicines-table tr:hover {
+    background-color: #ddd;
+}
 
 .social-media {
     margin-top: 1rem;

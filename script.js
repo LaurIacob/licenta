@@ -195,4 +195,65 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+
+
+//specialties popup
+    const learnMoreButtons = document.querySelectorAll('.learn-more-btn');
+    const modals = document.querySelectorAll('.modal');
+    const closeModalButtons = document.querySelectorAll('.modal .close');
+
+    learnMoreButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const modalId = this.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+            } else {
+                console.error(`Modal with ID ${modalId} not found.`);
+            }
+        });
+    });
+
+    closeModalButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const modal = this.closest('.modal');
+            modal.style.display = 'none';
+        });
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
+        }
+    });
+
+    //Medicines
+    fetch('/medicines')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.querySelector('#medicines-table tbody');
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                const cells = [
+                    item.cod_cim,
+                    item.denumire,
+                    item.dci,
+                    item.forma_farmaceutica,
+                    item.concentratie,
+                    item.firma_tara_producatoare,
+                    item.actiune_terapeutica,
+                    item.ambalaj,
+                    item.valabilitate_ambalaj
+                ];
+
+                cells.forEach(cellText => {
+                    const cell = document.createElement('td');
+                    cell.textContent = cellText;
+                    row.appendChild(cell);
+                });
+
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error fetching medicines data:', error));
 });
